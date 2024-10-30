@@ -42,8 +42,8 @@
 <!-- Doctor's Chat Interface -->
 <div id="chatInterface">
     <!-- Floating Chat Button -->
-    <button class="floating-chat-btn" id="chatButton">
-        <i class="bi bi-chat-dots-fill"></i> Doctor Chat
+    <button class="floating-chat-btn btn btn-primary" id="chatButton">
+        <i class="bi bi-chat-dots-fill"></i> Doctor Assistant
     </button>
 
     <!-- Chat Overlay -->
@@ -58,7 +58,16 @@
             <div class="chat-overlay-body">
                 <div class="chat-overlay-messages" id="chatMessages">
                     <div class="message system">
-                        Welcome Doctor! I'm your AI assistant. I can help you with patient records, treatment planning, and appointment management. How can I assist you today?
+                        Welcome Doctor! I'm your AI assistant. I can help you with:
+                        • Patient Information: Ask about any patient's history and records
+                        • Data Modifications: Request updates to patient information
+                        • Appointment Reminders: Get notifications about upcoming appointments
+                        • WhatsApp Integration: Chat continues seamlessly on WhatsApp
+
+                        Try asking things like:
+                        "Show me Emily Thompson's dental history"
+                        "Remind me about tomorrow's appointments"
+                        "Update patient contact details"
                     </div>
                 </div>
                 <form id="chatForm" class="mt-3">

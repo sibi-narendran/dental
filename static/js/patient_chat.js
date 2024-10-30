@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatForm = document.getElementById('chat-form');
     const messageInput = document.getElementById('message-input');
 
-    function addMessage(message, isUser = false) {
+    function addMessage(message, isUser = false, isError = false) {
         const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${isUser ? 'user' : 'ai'} mb-2`;
+        messageDiv.className = `message ${isUser ? 'user' : isError ? 'system' : 'ai'} mb-2`;
         messageDiv.textContent = message;
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         addMessage(message, true);
         messageInput.value = '';
+        messageInput.disabled = true;
 
         try {
             const response = await fetch('/api/chat/patient', {
@@ -28,11 +29,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({ message })
             });
             
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
             const data = await response.json();
             addMessage(data.response);
         } catch (error) {
             console.error('Error sending message:', error);
-            addMessage('Sorry, I encountered an error. Please try again.');
+            addMessage('Sorry, I encountered an error. Please try again.', false, true);
+        } finally {
+            messageInput.disabled = false;
+            messageInput.focus();
         }
     });
 });

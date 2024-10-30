@@ -7,17 +7,22 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                <h2 class="mb-0">Chat with AI Assistant</h2>
+                <h2 class="mb-0">Patient Assistant</h2>
             </div>
             <div class="card-body">
                 <div id="chat-messages" class="mb-3" style="height: 400px; overflow-y: auto;">
                     <div class="message system">
-                        Hello! I'm your dental assistant. How can I help you today?
+                        Hello! I'm your dental assistant. I can help you with:
+                        • Scheduling appointments
+                        • Information about procedures
+                        • General dental questions
+                        How can I assist you today?
                     </div>
                 </div>
                 <form id="chat-form">
                     <div class="input-group">
-                        <input type="text" id="message-input" class="form-control" placeholder="Type your message...">
+                        <input type="text" id="message-input" class="form-control" 
+                            placeholder="Ask about appointments, procedures, or dental care...">
                         <button type="submit" class="btn btn-primary">Send</button>
                     </div>
                 </form>

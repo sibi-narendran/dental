@@ -39,28 +39,36 @@
     </div>
 </div>
 
-<!-- Floating Chat Button -->
-<button class="floating-chat-btn" id="chatButton">
-    <i class="bi bi-chat-dots-fill"></i> Chat
-</button>
+<!-- Doctor's Chat Interface -->
+<div id="chatInterface">
+    <!-- Floating Chat Button -->
+    <button class="floating-chat-btn" id="chatButton">
+        <i class="bi bi-chat-dots-fill"></i> Doctor Chat
+    </button>
 
-<!-- Chat Overlay -->
-<div class="chat-overlay" id="chatOverlay">
-    <div class="chat-overlay-content">
-        <div class="chat-overlay-header">
-            <h3>AI Assistant Chat</h3>
-            <button class="btn btn-outline-light" id="minimizeChat">
-                <i class="bi bi-x-lg"></i>
-            </button>
-        </div>
-        <div class="chat-overlay-body">
-            <div class="chat-overlay-messages" id="chatMessages"></div>
-            <form id="chatForm" class="mt-3">
-                <div class="input-group">
-                    <textarea class="form-control" id="chatInput" rows="2" placeholder="Type your message..."></textarea>
-                    <button type="submit" class="btn btn-primary">Send</button>
+    <!-- Chat Overlay -->
+    <div class="chat-overlay" id="chatOverlay">
+        <div class="chat-overlay-content">
+            <div class="chat-overlay-header">
+                <h3>Doctor's AI Assistant</h3>
+                <button class="btn btn-outline-light" id="minimizeChat">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="chat-overlay-body">
+                <div class="chat-overlay-messages" id="chatMessages">
+                    <div class="message system">
+                        Welcome Doctor! I'm your AI assistant. I can help you with patient records, treatment planning, and appointment management. How can I assist you today?
+                    </div>
                 </div>
-            </form>
+                <form id="chatForm" class="mt-3">
+                    <div class="input-group">
+                        <textarea class="form-control" id="chatInput" rows="2" 
+                            placeholder="Ask about patients, treatments, or appointments..."></textarea>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

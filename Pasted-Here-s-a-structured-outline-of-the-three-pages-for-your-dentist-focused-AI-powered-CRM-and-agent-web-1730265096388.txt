@@ -1,0 +1,53 @@
+Here's a structured outline of the three pages for your dentist-focused AI-powered CRM and agent website. This structure is designed to work well on Replit and provides an intuitive flow for doctors and patients:
+
+---
+
+### 1. **Home Page**
+
+   - **Title:** "AI-Powered Solutions for Dental Practices"
+   - **Hero Section:**
+     - Brief, impactful headline (e.g., "Transform Your Dental Practice with Our AI-Powered Agent")
+     - Subheading highlighting benefits: "Automate patient follow-ups, reduce missed appointments, increase sales, and provide seamless care with AI integration."
+     - Call-to-Action (CTA) buttons:
+       - **Demo Button:** Leads to the **Doctor Portal**
+       - **Contact Us Button:** Links to [maaya.ai](http://maaya.ai)
+
+   - **Benefits Section:**
+     - **Automated Communication:** "Connect with patients via WhatsApp, email, and SMS to keep them informed and engaged."
+     - **Appointment Management:** "Minimize no-shows with proactive reminders and easy rescheduling."
+     - **Enhanced Patient Experience:** "Provide answers to patient inquiries and streamline appointment bookings."
+     - **Sales & Retention Boost:** "Upsell treatments, re-engage patients, and offer seamless post-appointment care."
+
+   - **Features Highlights:**
+     - Integration with WhatsApp, email, and SMS
+     - AI-powered responses to patient inquiries
+     - CRM with schedule and appointment management
+     - Personalized follow-ups and notifications
+
+---
+
+### 2. **Doctor Portal**
+
+   - **Title:** "Doctor Portal"
+   - **Main Dashboard:**
+     - **Approve Appointments:** Easy view of pending patient appointment requests with an “Approve” button for each.
+     - **Check Schedule:** Full calendar view, showing booked appointments, patient names, and statuses.
+     - **Ask AI about Patients:** A text box where doctors can ask the LLM questions related to a patient's history, upcoming procedures, etc.
+
+   - **Buttons:**
+     - **Patient Chat Page Button:** Leads to the **Patient Chat Page**
+     - **Back to Home Button:** Redirects back to the **Home Page**
+
+---
+
+### 3. **Patient Chat Page**
+
+   - **Title:** "Patient Chat Page"
+   - **Interactive Chat Interface:** Chatbot interface for patients to:
+     - **Get Information on Appointments:** Check their upcoming appointment date and time, reschedule if needed.
+     - **Book Appointments:** Simple prompts guiding them through the appointment booking process.
+     - **Ask About Procedures:** Patients can type in their questions about procedures, costs, or preparation steps, and the AI provides informative responses.
+
+---
+
+Let me know if you’d like any additional enhancements or specific styling recommendations for each page.

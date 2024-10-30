@@ -1,4 +1,100 @@
-/* Chat styles */
+/* Animation keyframes */
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Animation classes */
+.animate-slide-down {
+    animation: slideDown 1s ease forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 1s ease forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-fade-in-delayed {
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.animate-slide-right {
+    animation: slideRight 1s ease forwards;
+}
+
+.animate-slide-left {
+    animation: slideLeft 1s ease forwards;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 5rem 0;
+    background: linear-gradient(45deg, var(--bs-dark) 0%, var(--bs-primary-bg-subtle) 100%);
+    margin-top: -1.5rem;
+}
+
+/* Feature Cards */
+.feature-card {
+    border: 1px solid var(--bs-border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--bs-dark);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--bs-primary);
+}
+
+/* Button animations */
+.pulse-button {
+    animation: pulse 2s infinite;
+}
+
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-3px);
+}
+
+/* Chat styles (preserved from original) */
 #chat-messages {
     padding: 1rem;
 }
@@ -26,51 +122,7 @@
     margin: 1rem 10%;
 }
 
-/* Card hover effect */
-.card {
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Custom spacing */
-.py-5 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-}
-
-/* Chat Button */
-.chat-btn {
-    padding: 1rem 1.5rem;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    background-color: var(--bs-primary);
-    color: white;
-    border: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.chat-btn:hover {
-    transform: scale(1.1);
-}
-
-.chat-info {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: var(--bs-dark);
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Chat Overlay */
+/* Chat overlay styles (preserved from original) */
 .chat-overlay {
     position: fixed;
     top: 0;
@@ -130,5 +182,13 @@
     
     .chat-overlay-content {
         padding: 1rem;
+    }
+    
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .feature-card {
+        margin-bottom: 1rem;
     }
 }

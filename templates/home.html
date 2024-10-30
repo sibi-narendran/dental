@@ -3,50 +3,107 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="text-center py-5">
-    <h1 class="display-4">AI-Powered Solutions for Dental Practices</h1>
-    <p class="lead">Transform Your Dental Practice with Our AI-Powered Agent</p>
-    <p class="mb-4">Automate patient follow-ups, reduce missed appointments, increase sales, and provide seamless care with AI integration.</p>
-    
-    <div class="mb-5">
-        <a href="/doctor-portal" class="btn btn-primary btn-lg me-3">Try Demo</a>
-        <a href="http://maaya.ai" class="btn btn-outline-secondary btn-lg">Contact Us</a>
+<!-- Hero Section -->
+<div class="hero-section text-center py-5">
+    <div class="container">
+        <h1 class="display-3 fw-bold animate-slide-down">AI-Powered Solutions for Dental Practices</h1>
+        <p class="lead fs-3 mb-4 text-secondary animate-fade-in">Transform Your Dental Practice with Our AI-Powered Agent</p>
+        <p class="fs-5 mb-5 text-secondary animate-fade-in-delayed">
+            Automate patient follow-ups, reduce missed appointments, increase sales, and provide seamless care with AI integration.
+        </p>
+        <div class="d-flex justify-content-center gap-3 mb-5 animate-slide-up">
+            <a href="/doctor-portal" class="btn btn-primary btn-lg pulse-button">Try Demo</a>
+            <a href="http://maaya.ai" class="btn btn-outline-secondary btn-lg hover-lift">Contact Us</a>
+        </div>
     </div>
 </div>
 
-<div class="row g-4 py-5">
-    <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Automated Communication</h5>
-                <p class="card-text">Connect with patients via WhatsApp, email, and SMS to keep them informed and engaged.</p>
+<!-- Benefits Section -->
+<div class="container py-5">
+    <h2 class="text-center mb-5 animate-slide-down">Why Choose Our Solution?</h2>
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card card h-100 animate-fade-in">
+                <div class="card-body text-center">
+                    <i class="bi bi-chat-dots-fill feature-icon mb-3"></i>
+                    <h5 class="card-title">Automated Communication</h5>
+                    <p class="card-text">Connect with patients via WhatsApp, email, and SMS to keep them informed and engaged.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card card h-100 animate-fade-in" style="animation-delay: 0.2s">
+                <div class="card-body text-center">
+                    <i class="bi bi-calendar-check-fill feature-icon mb-3"></i>
+                    <h5 class="card-title">Appointment Management</h5>
+                    <p class="card-text">Minimize no-shows with proactive reminders and easy rescheduling.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card card h-100 animate-fade-in" style="animation-delay: 0.4s">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-hearts feature-icon mb-3"></i>
+                    <h5 class="card-title">Enhanced Patient Experience</h5>
+                    <p class="card-text">Provide answers to patient inquiries and streamline appointment bookings.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card card h-100 animate-fade-in" style="animation-delay: 0.6s">
+                <div class="card-body text-center">
+                    <i class="bi bi-graph-up-arrow feature-icon mb-3"></i>
+                    <h5 class="card-title">Sales & Retention Boost</h5>
+                    <p class="card-text">Upsell treatments, re-engage patients, and offer seamless post-appointment care.</p>
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Appointment Management</h5>
-                <p class="card-text">Minimize no-shows with proactive reminders and easy rescheduling.</p>
+</div>
+
+<!-- Features Section -->
+<div class="bg-dark py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 animate-slide-down">Key Features</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="d-flex align-items-start animate-slide-right">
+                    <i class="bi bi-whatsapp text-success fs-2 me-3"></i>
+                    <div>
+                        <h5>Multi-Channel Integration</h5>
+                        <p>Seamless communication via WhatsApp, email, and SMS platforms.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Enhanced Patient Experience</h5>
-                <p class="card-text">Provide answers to patient inquiries and streamline appointment bookings.</p>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start animate-slide-left">
+                    <i class="bi bi-robot text-primary fs-2 me-3"></i>
+                    <div>
+                        <h5>AI-Powered Responses</h5>
+                        <p>Intelligent automated responses to common patient inquiries.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Sales & Retention Boost</h5>
-                <p class="card-text">Upsell treatments, re-engage patients, and offer seamless post-appointment care.</p>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start animate-slide-right">
+                    <i class="bi bi-calendar2-week text-info fs-2 me-3"></i>
+                    <div>
+                        <h5>Smart Scheduling</h5>
+                        <p>Advanced CRM with intelligent schedule management.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start animate-slide-left">
+                    <i class="bi bi-bell text-warning fs-2 me-3"></i>
+                    <div>
+                        <h5>Automated Follow-ups</h5>
+                        <p>Personalized notifications and appointment reminders.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

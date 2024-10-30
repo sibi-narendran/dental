@@ -2,6 +2,11 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 class Base(DeclarativeBase):
     pass
@@ -17,6 +22,9 @@ app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
 }
 db.init_app(app)
 
+# Import routes before creating tables
 with app.app_context():
+    import routes  # This needs to be imported first
     import models
     db.create_all()
+    logger.info("Database tables created successfully")

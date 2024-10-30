@@ -1,11 +1,27 @@
 import os
 from openai import OpenAI
-from typing import Dict
+from typing import Dict, Optional
 from datetime import datetime, timedelta
 import random
+import logging
 
-# Initialize OpenAI client
-client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Initialize OpenAI client with error handling
+try:
+    api_key = os.environ.get('OPENAI_API_KEY')
+    if not api_key:
+        raise ValueError("OpenAI API key is not set in environment variables")
+    
+    client = OpenAI(api_key=api_key)
+    # Test the API key with a minimal request
+    client.models.list()
+    logger.info("OpenAI client initialized successfully")
+except Exception as e:
+    logger.error(f"Error initializing OpenAI client: {str(e)}")
+    client = None
 
 # Keep demo patient data for reference
 DEMO_PATIENTS = {
@@ -77,6 +93,13 @@ This is a demo system, so prefix any specific appointment times, costs, or conta
 def get_ai_response(message: str, is_doctor: bool = False) -> str:
     """Get response from OpenAI ChatGPT based on role"""
     try:
+        if not client:
+            logger.error("OpenAI client is not initialized")
+            return "I apologize, but the AI service is currently unavailable. Please try again later."
+
+        # Log the incoming request
+        logger.info(f"Processing {'doctor' if is_doctor else 'patient'} chat request")
+        
         # Get patient context if available
         patient_context = get_patient_context(message)
         
@@ -108,7 +131,11 @@ def get_ai_response(message: str, is_doctor: bool = False) -> str:
             temperature=0.7,
             max_tokens=500
         )
+        
+        # Log successful response
+        logger.info(f"Successfully generated response for {'doctor' if is_doctor else 'patient'} chat")
         return response.choices[0].message.content
 
     except Exception as e:
-        return f"I apologize, but I'm having trouble processing your request at the moment. Please try again later or contact our office directly."
+        logger.error(f"Error in get_ai_response: {str(e)}")
+        return "I apologize, but I'm having trouble processing your request at the moment. Please try again later or contact our office directly."

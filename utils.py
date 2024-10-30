@@ -25,18 +25,60 @@ except Exception as e:
 
 # Keep demo patient data for reference
 DEMO_PATIENTS = {
-    "John Smith": {
+    "Emily Thompson": {
         "id": "P1001",
         "history": [
-            {"date": "2024-09-15", "procedure": "Dental Cleaning", "notes": "Regular checkup, good oral hygiene"},
-            {"date": "2024-03-20", "procedure": "Filling", "tooth": "#18", "notes": "Composite filling"}
+            {"date": "2024-09-15", "procedure": "Teeth Whitening", "notes": "Professional whitening completed, excellent results"},
+            {"date": "2024-03-20", "procedure": "Routine Checkup", "notes": "No cavities, good oral hygiene"}
         ]
     },
-    "Sarah Johnson": {
+    "Michael Chen": {
         "id": "P1002",
         "history": [
-            {"date": "2024-10-01", "procedure": "Root Canal", "tooth": "#30", "notes": "Post-procedure recovery excellent"},
-            {"date": "2024-08-12", "procedure": "Crown", "tooth": "#19", "notes": "Permanent crown placed"}
+            {"date": "2024-10-01", "procedure": "Dental Implant", "tooth": "#30", "notes": "Implant placement successful"},
+            {"date": "2024-08-12", "procedure": "Dental Bridge", "tooth": "#18-20", "notes": "Bridge fitted and adjusted"}
+        ]
+    },
+    "Sofia Rodriguez": {
+        "id": "P1003",
+        "history": [
+            {"date": "2024-09-20", "procedure": "Orthodontic Consultation", "notes": "Treatment plan discussed for braces"},
+            {"date": "2024-07-15", "procedure": "Gum Treatment", "notes": "Deep cleaning completed"}
+        ]
+    },
+    "James Wilson": {
+        "id": "P1004",
+        "history": [
+            {"date": "2024-10-05", "procedure": "Wisdom Tooth Extraction", "tooth": "#1,16,17,32", "notes": "All wisdom teeth removed"},
+            {"date": "2024-06-30", "procedure": "Emergency Dental Care", "notes": "Treated severe tooth pain"}
+        ]
+    },
+    "Aisha Patel": {
+        "id": "P1005",
+        "history": [
+            {"date": "2024-09-25", "procedure": "Dental Bridge", "tooth": "#13-15", "notes": "Bridge preparation completed"},
+            {"date": "2024-08-01", "procedure": "Gum Treatment", "notes": "Periodontal maintenance"}
+        ]
+    },
+    "David Kim": {
+        "id": "P1006",
+        "history": [
+            {"date": "2024-10-10", "procedure": "Dental Implant", "tooth": "#19", "notes": "Initial implant consultation"},
+            {"date": "2024-07-20", "procedure": "Routine Checkup", "notes": "Minor plaque buildup noted"}
+        ]
+    },
+    "Rachel Foster": {
+        "id": "P1007",
+        "history": [
+            {"date": "2024-09-30", "procedure": "Teeth Whitening", "notes": "Take-home whitening kit provided"},
+            {"date": "2024-08-15", "procedure": "Orthodontic Consultation", "notes": "Invisalign treatment discussed"}
+        ]
+    },
+    "Omar Hassan": {
+        "id": "P1008",
+        "history": [
+            {"date": "2024-10-15", "procedure": "Emergency Dental Care", "notes": "Treated chipped tooth"},
+            {"date": "2024-07-01", "procedure": "Wisdom Tooth Extraction", "tooth": "#16", "notes": "Single wisdom tooth removal"}
         ]
     }
 }

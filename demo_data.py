@@ -10,8 +10,18 @@ def create_demo_data():
         Appointment.query.delete()
         Patient.query.delete()
         
-        # Demo procedures
-        procedures = ["Dental Cleaning", "Root Canal", "Filling", "Crown"]
+        # Demo procedures with approximate durations
+        procedures = [
+            "Teeth Whitening",
+            "Dental Implant",
+            "Wisdom Tooth Extraction",
+            "Dental Bridge",
+            "Orthodontic Consultation",
+            "Gum Treatment",
+            "Routine Checkup",
+            "Emergency Dental Care"
+        ]
+        
         statuses = ["pending", "approved"]
         
         # Create patients
@@ -20,31 +30,58 @@ def create_demo_data():
             patient = Patient(
                 name=name,
                 email=f"{name.lower().replace(' ', '.')}@demo.com",
-                phone="555-0123"
+                phone=f"555-{random.randint(1000,9999)}"
             )
             db.session.add(patient)
             patients[name] = patient
         
         # Generate appointments for the next 7 days
         current_date = datetime.now()
+        
+        # Assign procedures to specific time slots based on complexity
+        morning_slots = [9, 10, 11]  # Morning appointments
+        afternoon_slots = [14, 15, 16]  # Afternoon appointments
+        
         for day in range(1, 8):
             appointment_date = current_date + timedelta(days=day)
             
             # Only weekdays
             if appointment_date.weekday() < 5:
-                # 2-3 appointments per day
-                for hour in random.sample(range(9, 16), random.randint(2, 3)):
+                # Create 4-5 appointments per day
+                num_appointments = random.randint(4, 5)
+                available_slots = morning_slots + afternoon_slots
+                selected_slots = random.sample(available_slots, num_appointments)
+                
+                for hour in selected_slots:
                     # Randomly select patient and procedure
                     patient = random.choice(list(patients.values()))
-                    procedure = random.choice(procedures)
+                    
+                    # Select procedure based on time of day
+                    if hour in morning_slots:
+                        # More complex procedures in the morning
+                        procedure = random.choice([
+                            "Dental Implant",
+                            "Wisdom Tooth Extraction",
+                            "Dental Bridge",
+                            "Gum Treatment"
+                        ])
+                    else:
+                        # Simpler procedures in the afternoon
+                        procedure = random.choice([
+                            "Teeth Whitening",
+                            "Orthodontic Consultation",
+                            "Routine Checkup",
+                            "Emergency Dental Care"
+                        ])
+                    
                     status = random.choice(statuses)
                     
                     appointment = Appointment(
                         patient=patient,
-                        datetime=appointment_date.replace(hour=hour, minute=random.choice([0, 30])),
+                        datetime=appointment_date.replace(hour=hour, minute=random.choice([0, 15, 30, 45])),
                         procedure=procedure,
                         status=status,
-                        notes="Demo appointment"
+                        notes=f"Demo appointment for {procedure}"
                     )
                     db.session.add(appointment)
         

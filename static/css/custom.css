@@ -1,0 +1,50 @@
+/* Chat styles */
+#chat-messages {
+    padding: 1rem;
+}
+
+.message {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.message.user {
+    background-color: var(--bs-primary);
+    margin-left: 20%;
+}
+
+.message.ai {
+    background-color: var(--bs-secondary);
+    margin-right: 20%;
+}
+
+.message.system {
+    background-color: var(--bs-dark);
+    text-align: center;
+    margin: 1rem 10%;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom spacing */
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .message.user,
+    .message.ai {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

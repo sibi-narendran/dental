@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Doctor Portal{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h2>Appointments</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date/Time</th>
+                        <th>Patient</th>
+                        <th>Procedure</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for appointment in appointments %}
+                    <tr>
+                        <td>{{ appointment.datetime.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>{{ appointment.patient.name }}</td>
+                        <td>{{ appointment.procedure }}</td>
+                        <td>{{ appointment.status }}</td>
+                        <td>
+                            {% if appointment.status == 'pending' %}
+                            <button class="btn btn-sm btn-success approve-btn" data-id="{{ appointment.id }}">
+                                Approve
+                            </button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <h2>AI Assistant</h2>
+        <div class="card">
+            <div class="card-body">
+                <form id="aiQueryForm">
+                    <div class="mb-3">
+                        <label for="query" class="form-label">Ask about patients</label>
+                        <textarea class="form-control" id="query" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ask AI</button>
+                </form>
+                <div id="aiResponse" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/doctor_portal.js') }}"></script>
+{% endblock %}

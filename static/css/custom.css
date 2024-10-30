@@ -41,11 +41,8 @@
     padding-bottom: 3rem !important;
 }
 
-/* Floating Chat Button */
-.floating-chat-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+/* Chat Button */
+.chat-btn {
     padding: 1rem 1.5rem;
     border-radius: 25px;
     font-size: 1.1rem;
@@ -53,16 +50,24 @@
     color: white;
     border: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 1000;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.floating-chat-btn:hover {
+.chat-btn:hover {
     transform: scale(1.1);
+}
+
+.chat-info {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--bs-dark);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Chat Overlay */

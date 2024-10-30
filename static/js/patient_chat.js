@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messageInput.value = '';
 
         try {
-            const response = await fetch('/api/chat', {
+            const response = await fetch('/api/chat/patient', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

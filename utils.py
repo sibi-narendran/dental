@@ -50,42 +50,57 @@ Last visits:
 {chr(10).join(f"• {visit['date']}: {visit['procedure']} - {visit['notes']}" for visit in history)}"""
     return ""
 
-def get_ai_response(message: str) -> str:
-    """Get response from OpenAI ChatGPT"""
-    # Get patient context if available
-    patient_context = get_patient_context(message)
-    
-    # Generate available slots for appointment-related queries
-    slots = generate_available_slots(7) if 'appointment' in message.lower() else []
-    
-    # Create system message with dental context
-    system_message = """You are a friendly and professional dental office AI assistant. 
+def get_doctor_system_prompt() -> str:
+    """Get the system prompt for doctor interactions"""
+    return """You are an AI assistant for dental professionals. Your role is to:
+1. Help analyze patient records and provide insights
+2. Assist with treatment planning and procedure recommendations
+3. Provide evidence-based answers to clinical questions
+4. Help manage appointments and schedules
+5. Offer guidance on best practices and protocols
+
+Use medical terminology when appropriate but maintain clarity. This is a demo system, so prefix any specific medical advice, diagnoses, or treatment plans with [DEMO]. Always encourage consulting with colleagues for complex cases."""
+
+def get_patient_system_prompt() -> str:
+    """Get the system prompt for patient interactions"""
+    return """You are a friendly and professional dental office AI assistant. 
 Your role is to help patients with:
 1. Scheduling and managing appointments
-2. Providing information about dental procedures
+2. Providing general information about dental procedures
 3. Answering questions about services and costs
-4. Handling dental emergencies
-5. Providing general dental advice
+4. Addressing basic dental concerns
+5. Offering oral hygiene guidance
 
-Keep responses concise and professional. For appointments, work with the provided available slots.
+Keep responses simple and patient-friendly. Avoid technical medical terminology unless necessary.
 This is a demo system, so prefix any specific appointment times, costs, or contact details with [DEMO]."""
 
-    # Create messages array for the chat
-    messages = [
-        {"role": "system", "content": system_message},
-        {"role": "user", "content": message}
-    ]
-
-    # Add patient context if available
-    if patient_context:
-        messages.insert(1, {"role": "system", "content": f"Current patient context:\n{patient_context}"})
-
-    # Add available slots if appointment-related
-    if slots:
-        slot_text = "\n".join(f"• {slot}" for slot in slots[:3])
-        messages.insert(1, {"role": "system", "content": f"Available appointment slots:\n{slot_text}"})
-
+def get_ai_response(message: str, is_doctor: bool = False) -> str:
+    """Get response from OpenAI ChatGPT based on role"""
     try:
+        # Get patient context if available
+        patient_context = get_patient_context(message)
+        
+        # Generate available slots for appointment-related queries
+        slots = generate_available_slots(7) if 'appointment' in message.lower() else []
+        
+        # Create system message based on role
+        system_message = get_doctor_system_prompt() if is_doctor else get_patient_system_prompt()
+        
+        # Create messages array for the chat
+        messages = [
+            {"role": "system", "content": system_message},
+            {"role": "user", "content": message}
+        ]
+
+        # Add patient context if available
+        if patient_context:
+            messages.insert(1, {"role": "system", "content": f"Current patient context:\n{patient_context}"})
+
+        # Add available slots if appointment-related
+        if slots:
+            slot_text = "\n".join(f"• {slot}" for slot in slots[:3])
+            messages.insert(1, {"role": "system", "content": f"Available appointment slots:\n{slot_text}"})
+
         # Get response from OpenAI
         response = client.chat.completions.create(
             model="gpt-4",

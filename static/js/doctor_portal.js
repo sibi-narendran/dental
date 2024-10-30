@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle AI queries
+    // Handle AI queries for doctors
     const aiQueryForm = document.getElementById('aiQueryForm');
     const aiResponse = document.getElementById('aiResponse');
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const query = document.getElementById('query').value;
         
         try {
-            const response = await fetch('/api/chat', {
+            const response = await fetch('/api/chat/doctor', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

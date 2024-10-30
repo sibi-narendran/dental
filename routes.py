@@ -45,8 +45,14 @@ def approve_appointment(appointment_id):
     db.session.commit()
     return jsonify({'success': True})
 
-@app.route('/api/chat', methods=['POST'])
-def chat():
+@app.route('/api/chat/doctor', methods=['POST'])
+def doctor_chat():
     message = request.json['message']
-    response = get_ai_response(message)
+    response = get_ai_response(message, is_doctor=True)
+    return jsonify({'response': response})
+
+@app.route('/api/chat/patient', methods=['POST'])
+def patient_chat_api():
+    message = request.json['message']
+    response = get_ai_response(message, is_doctor=False)
     return jsonify({'response': response})

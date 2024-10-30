@@ -62,6 +62,37 @@
     padding: 5rem 0;
     background: linear-gradient(135deg, #1a1e3c 0%, #2d3a8c 50%, #3c1a5b 100%);
     margin-top: -1.5rem;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+}
+
+.hero-section h1 {
+    color: var(--bs-white);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.hero-section .lead {
+    color: var(--bs-light);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    font-weight: 500;
+}
+
+.hero-section .text-secondary {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 /* Feature Cards */
@@ -94,7 +125,7 @@
     transform: translateY(-3px);
 }
 
-/* Chat styles (preserved from original) */
+/* Chat styles */
 #chat-messages {
     padding: 1rem;
 }
@@ -122,7 +153,7 @@
     margin: 1rem 10%;
 }
 
-/* Chat overlay styles (preserved from original) */
+/* Chat overlay styles */
 .chat-overlay {
     position: fixed;
     top: 0;
@@ -186,6 +217,10 @@
     
     .hero-section {
         padding: 3rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
     }
     
     .feature-card {

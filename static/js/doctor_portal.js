@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Chat overlay elements
     const chatButton = document.querySelector('#chatButton');
     const chatOverlay = document.querySelector('#chatOverlay');
-    const minimizeChat = document.querySelector('#minimizeChat');
     const chatMessages = document.querySelector('#chatMessages');
     const chatForm = document.querySelector('#chatForm');
     const chatInput = document.querySelector('#chatInput');
+    const chatOverlayHeader = document.querySelector('.chat-overlay-header');
 
     // Initialize chat functionality if elements exist
-    if (chatButton && chatOverlay && minimizeChat && chatMessages && chatForm && chatInput) {
+    if (chatButton && chatOverlay && chatMessages && chatForm && chatInput) {
         // Toggle chat overlay
         function toggleChatOverlay() {
             chatOverlay.classList.toggle('active');
@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add event listeners
         chatButton.addEventListener('click', toggleChatOverlay);
-        minimizeChat.addEventListener('click', toggleChatOverlay);
+        if (chatOverlayHeader) {
+            chatOverlayHeader.style.cursor = 'pointer';
+            chatOverlayHeader.addEventListener('click', toggleChatOverlay);
+        }
 
         // Add message to chat
         function addMessage(message, isUser = false) {

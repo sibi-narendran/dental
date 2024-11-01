@@ -1,8 +1,8 @@
 from flask import render_template, request, jsonify
-from app import app, db
-from models import Patient, Appointment
+from app import app
 from utils import get_ai_response
 from datetime import datetime
+import storage
 
 @app.route('/')
 def home():
@@ -10,7 +10,7 @@ def home():
 
 @app.route('/doctor-portal')
 def doctor_portal():
-    appointments = Appointment.query.order_by(Appointment.datetime).all()
+    appointments = storage.get_all_appointments()
     return render_template('doctor_portal.html', appointments=appointments)
 
 @app.route('/patient-chat')
@@ -20,27 +20,24 @@ def patient_chat():
 @app.route('/api/appointments', methods=['POST'])
 def create_appointment():
     data = request.json
-    patient = Patient.query.filter_by(email=data['email']).first()
+    patient = storage.get_patient_by_email(data['email'])
     if not patient:
-        patient = Patient(
+        patient = storage.add_patient(
             name=data['name'],
             email=data['email'],
             phone=data['phone']
         )
-        db.session.add(patient)
         
-    appointment = Appointment(
-        patient=patient,
-        datetime=datetime.strptime(data['datetime'], '%Y-%m-%dT%H:%M'),
+    appointment = storage.add_appointment(
+        patient_id=patient['id'],
+        datetime_obj=datetime.strptime(data['datetime'], '%Y-%m-%dT%H:%M'),
         procedure=data['procedure']
     )
-    db.session.add(appointment)
-    db.session.commit()
     return jsonify({'success': True})
 
 @app.route('/api/appointments/<int:appointment_id>/approve', methods=['POST'])
 def approve_appointment(appointment_id):
-    # Demo mode: No database updates, just return success
+    # Demo mode: No storage updates, just return success
     # Updates are simulated in the UI and reset on page reload
     return jsonify({'success': True})
 

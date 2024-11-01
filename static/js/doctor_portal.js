@@ -1,26 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Chat overlay elements
-    const chatButton = document.querySelector('#chatButton');
-    const chatOverlay = document.querySelector('#chatOverlay');
-    const minimizeChat = document.querySelector('#minimizeChat');
+    // Chat elements
     const chatMessages = document.querySelector('#chatMessages');
     const chatForm = document.querySelector('#chatForm');
     const chatInput = document.querySelector('#chatInput');
 
     // Initialize chat functionality if elements exist
-    if (chatButton && chatOverlay && minimizeChat && chatMessages && chatForm && chatInput) {
-        // Toggle chat overlay
-        function toggleChatOverlay() {
-            chatOverlay.classList.toggle('active');
-            if (chatOverlay.classList.contains('active')) {
-                chatInput.focus();
-            }
-        }
-
-        // Add event listeners
-        chatButton.addEventListener('click', toggleChatOverlay);
-        minimizeChat.addEventListener('click', toggleChatOverlay);
-
+    if (chatMessages && chatForm && chatInput) {
         // Add message to chat
         function addMessage(message, isUser = false) {
             const messageDiv = document.createElement('div');
@@ -63,8 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 chatInput.focus();
             }
         });
-    } else {
-        console.warn('Some chat elements not found, chat functionality disabled');
     }
 
     // Handle appointment approval (UI simulation only)

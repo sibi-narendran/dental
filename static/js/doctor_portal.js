@@ -67,25 +67,26 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Some chat elements not found, chat functionality disabled');
     }
 
-    // Handle appointment approval (separate functionality)
+    // Handle appointment approval (UI simulation only)
     const approveButtons = document.querySelectorAll('.approve-btn');
     approveButtons.forEach(button => {
         button.addEventListener('click', async function() {
             const appointmentId = this.dataset.id;
-            try {
-                const response = await fetch(`/api/appointments/${appointmentId}/approve`, {
-                    method: 'POST'
-                });
-                if (response.ok) {
-                    this.parentElement.innerHTML = 'Approved';
-                    this.remove();
-                } else {
-                    throw new Error('Failed to approve appointment');
-                }
-            } catch (error) {
-                console.error('Error approving appointment:', error);
-                alert('Failed to approve appointment. Please try again.');
-            }
+            const parentTd = this.parentElement;
+            const statusTd = parentTd.previousElementSibling;
+
+            // Update UI only - no backend call needed
+            statusTd.innerHTML = `
+                <span class="badge rounded-pill bg-success px-3 py-2">
+                    <i class="bi bi-check-circle-fill me-1"></i>
+                    Approved
+                </span>
+            `;
+            parentTd.innerHTML = `
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3" disabled>
+                    <i class="bi bi-check2-all me-1"></i> Approved
+                </button>
+            `;
         });
     });
 });

@@ -40,9 +40,8 @@ def create_appointment():
 
 @app.route('/api/appointments/<int:appointment_id>/approve', methods=['POST'])
 def approve_appointment(appointment_id):
-    appointment = Appointment.query.get_or_404(appointment_id)
-    appointment.status = 'approved'
-    db.session.commit()
+    # Demo mode: No database updates, just return success
+    # Updates are simulated in the UI and reset on page reload
     return jsonify({'success': True})
 
 @app.route('/api/chat/doctor', methods=['POST'])

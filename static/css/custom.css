@@ -118,11 +118,33 @@
 }
 
 .hover-lift {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
     transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* AI Assistant Button */
+.btn-gradient {
+    background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-info) 100%);
+    border: none;
+    color: var(--bs-white);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, var(--bs-info) 0%, var(--bs-primary) 100%);
+    color: var(--bs-white);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.btn-gradient:active {
+    transform: translateY(-1px);
 }
 
 /* Chat styles */

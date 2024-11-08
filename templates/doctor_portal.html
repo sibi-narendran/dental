@@ -39,12 +39,124 @@
             </div>
         </div>
     </div>
+
+    <!-- AI Assistant Capabilities -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-dark border-0">
+                <div class="card-body">
+                    <h4 class="mb-3"><i class="bi bi-question-circle-fill text-primary me-2"></i>What You Can Ask AI Assistant</h4>
+                    <div class="accordion" id="aiCapabilities">
+                        <!-- Patient Management -->
+                        <div class="accordion-item bg-dark">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#patientManagement">
+                                    <i class="bi bi-person-vcard-fill me-2"></i>Patient Management
+                                </button>
+                            </h2>
+                            <div id="patientManagement" class="accordion-collapse collapse" data-bs-parent="#aiCapabilities">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Show me the patient's history"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Summarize the patient's x-ray report"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Generate a prescription for this patient"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Update [patient's name]'s medical record"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"What treatments has [patient's name] received?"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Does [patient's name] have any allergies?"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Management -->
+                        <div class="accordion-item bg-dark">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#appointmentManagement">
+                                    <i class="bi bi-calendar2-check me-2"></i>Appointment Management
+                                </button>
+                            </h2>
+                            <div id="appointmentManagement" class="accordion-collapse collapse" data-bs-parent="#aiCapabilities">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Reschedule [patient's name]'s appointment"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Show me my appointments for today"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Check availability for [date/time]"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Cancel my appointments for tomorrow"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Book an appointment for [patient's name]"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Communication & Follow-Ups -->
+                        <div class="accordion-item bg-dark">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#communication">
+                                    <i class="bi bi-chat-dots-fill me-2"></i>Communication & Follow-Ups
+                                </button>
+                            </h2>
+                            <div id="communication" class="accordion-collapse collapse" data-bs-parent="#aiCapabilities">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Send follow-up reminder to [patient's name]"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Send post-treatment care instructions"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Reply to WhatsApp messages"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Send motivational message about treatment"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Upselling & Engagement -->
+                        <div class="accordion-item bg-dark">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#upselling">
+                                    <i class="bi bi-graph-up-arrow me-2"></i>Upselling & Engagement
+                                </button>
+                            </h2>
+                            <div id="upselling" class="accordion-collapse collapse" data-bs-parent="#aiCapabilities">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Suggest follow-up treatments"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Send promotional offers"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Upsell teeth whitening services"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Show interest in cosmetic procedures"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Analysis -->
+                        <div class="accordion-item bg-dark">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#dataAnalysis">
+                                    <i class="bi bi-bar-chart-fill me-2"></i>Data Analysis & Reports
+                                </button>
+                            </h2>
+                            <div id="dataAnalysis" class="accordion-collapse collapse" data-bs-parent="#aiCapabilities">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Show monthly appointment summary"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"How many missed appointments?"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Most popular treatments"</li>
+                                        <li class="mb-2"><i class="bi bi-chat-right-quote me-2 text-primary"></i>"Analyze patient feedback"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Chat Button -->
     <button class="btn btn-lg shadow-lg rounded-pill px-5 py-3 btn-gradient hover-lift" id="chatButton">
         <i class="bi bi-robot me-2"></i> Ask AI Assistant
     </button>
 </div>
 
+<!-- Appointments Section -->
 <div class="row">
     <div class="col-md-12">
         <div class="d-flex justify-content-between align-items-center mb-4">

@@ -14,7 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
             chatOverlay.classList.toggle('active');
             if (chatOverlay.classList.contains('active')) {
                 chatInput.focus();
+                scrollToBottom();
             }
+        }
+
+        // Scroll chat to bottom
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
         // Add event listeners
@@ -27,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             messageDiv.className = `message ${isUser ? 'user' : 'ai'} mb-2`;
             messageDiv.textContent = message;
             chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            scrollToBottom();
         }
 
         // Handle Enter key press

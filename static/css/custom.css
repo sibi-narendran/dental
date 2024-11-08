@@ -148,10 +148,17 @@
 }
 
 /* Chat styles */
-#chat-messages, .chat-overlay-messages {
-    padding: 1rem 1rem 1rem 0.5rem;
+#chat-messages {
+    padding: 1rem;
     scroll-behavior: smooth;
-    padding-right: 0.5rem;
+}
+
+.chat-overlay-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    height: calc(100vh - 200px);
+    padding: 1rem;
+    scroll-behavior: smooth;
 }
 
 .message {
@@ -218,14 +225,6 @@
     flex-direction: column;
 }
 
-.chat-overlay-messages {
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-    background-color: var(--bs-dark);
-    border-radius: 0.5rem;
-}
-
 /* Table styles */
 .table {
     margin-bottom: 0;
@@ -254,10 +253,20 @@
     
     .chat-overlay {
         width: 100%;
+        height: 100vh;
     }
     
     .chat-overlay-content {
+        height: 100vh;
         padding: 1rem;
+    }
+    
+    .chat-overlay-messages {
+        height: calc(100vh - 180px);
+    }
+    
+    .chat-overlay-body {
+        height: calc(100vh - 80px);
     }
     
     .hero-section {

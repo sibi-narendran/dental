@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatMessages = document.getElementById('chat-messages');
     const chatForm = document.getElementById('chat-form');
     const messageInput = document.getElementById('message-input');
+    const exampleSelect = document.getElementById('example-messages-select');
 
     // Initialize chat functionality if elements exist
     if (chatMessages && chatForm && messageInput) {
@@ -12,6 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+
+        // Handle example message selection
+        exampleSelect.addEventListener('change', function() {
+            if (this.value) {
+                messageInput.value = this.value;
+                messageInput.focus();
+                this.value = ''; // Reset select after using
+            }
+        });
 
         // Handle Enter key press
         messageInput.addEventListener('keydown', function(e) {

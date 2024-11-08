@@ -148,8 +148,10 @@
 }
 
 /* Chat styles */
-#chat-messages {
-    padding: 1rem;
+#chat-messages, .chat-overlay-messages {
+    padding: 1rem 1rem 1rem 0.5rem;
+    scroll-behavior: smooth;
+    padding-right: 0.5rem;
 }
 
 .message {
@@ -220,7 +222,6 @@
     flex-grow: 1;
     overflow-y: auto;
     margin-bottom: 1rem;
-    padding: 1rem;
     background-color: var(--bs-dark);
     border-radius: 0.5rem;
 }

@@ -14,7 +14,7 @@ try:
     api_key = os.environ.get('OPENAI_API_KEY')
     if not api_key:
         raise ValueError("OpenAI API key is not set in environment variables")
-    
+
     client = OpenAI(api_key=api_key)
     # Test the API key with a minimal request
     client.models.list()
@@ -26,62 +26,120 @@ except Exception as e:
 # Keep demo patient data for reference
 DEMO_PATIENTS = {
     "Emily Thompson": {
-        "id": "P1001",
-        "history": [
-            {"date": "2024-09-15", "procedure": "Teeth Whitening", "notes": "Professional whitening completed, excellent results"},
-            {"date": "2024-03-20", "procedure": "Routine Checkup", "notes": "No cavities, good oral hygiene"}
-        ]
+        "id":
+        "P1001",
+        "history": [{
+            "date":
+            "2024-09-15",
+            "procedure":
+            "Teeth Whitening",
+            "notes":
+            "Professional whitening completed, excellent results"
+        }, {
+            "date": "2024-03-20",
+            "procedure": "Routine Checkup",
+            "notes": "No cavities, good oral hygiene"
+        }]
     },
     "Michael Chen": {
-        "id": "P1002",
-        "history": [
-            {"date": "2024-10-01", "procedure": "Dental Implant", "tooth": "#30", "notes": "Implant placement successful"},
-            {"date": "2024-08-12", "procedure": "Dental Bridge", "tooth": "#18-20", "notes": "Bridge fitted and adjusted"}
-        ]
+        "id":
+        "P1002",
+        "history": [{
+            "date": "2024-10-01",
+            "procedure": "Dental Implant",
+            "tooth": "#30",
+            "notes": "Implant placement successful"
+        }, {
+            "date": "2024-08-12",
+            "procedure": "Dental Bridge",
+            "tooth": "#18-20",
+            "notes": "Bridge fitted and adjusted"
+        }]
     },
     "Sofia Rodriguez": {
-        "id": "P1003",
-        "history": [
-            {"date": "2024-09-20", "procedure": "Orthodontic Consultation", "notes": "Treatment plan discussed for braces"},
-            {"date": "2024-07-15", "procedure": "Gum Treatment", "notes": "Deep cleaning completed"}
-        ]
+        "id":
+        "P1003",
+        "history": [{
+            "date": "2024-09-20",
+            "procedure": "Orthodontic Consultation",
+            "notes": "Treatment plan discussed for braces"
+        }, {
+            "date": "2024-07-15",
+            "procedure": "Gum Treatment",
+            "notes": "Deep cleaning completed"
+        }]
     },
     "James Wilson": {
-        "id": "P1004",
-        "history": [
-            {"date": "2024-10-05", "procedure": "Wisdom Tooth Extraction", "tooth": "#1,16,17,32", "notes": "All wisdom teeth removed"},
-            {"date": "2024-06-30", "procedure": "Emergency Dental Care", "notes": "Treated severe tooth pain"}
-        ]
+        "id":
+        "P1004",
+        "history": [{
+            "date": "2024-10-05",
+            "procedure": "Wisdom Tooth Extraction",
+            "tooth": "#1,16,17,32",
+            "notes": "All wisdom teeth removed"
+        }, {
+            "date": "2024-06-30",
+            "procedure": "Emergency Dental Care",
+            "notes": "Treated severe tooth pain"
+        }]
     },
     "Aisha Patel": {
-        "id": "P1005",
-        "history": [
-            {"date": "2024-09-25", "procedure": "Dental Bridge", "tooth": "#13-15", "notes": "Bridge preparation completed"},
-            {"date": "2024-08-01", "procedure": "Gum Treatment", "notes": "Periodontal maintenance"}
-        ]
+        "id":
+        "P1005",
+        "history": [{
+            "date": "2024-09-25",
+            "procedure": "Dental Bridge",
+            "tooth": "#13-15",
+            "notes": "Bridge preparation completed"
+        }, {
+            "date": "2024-08-01",
+            "procedure": "Gum Treatment",
+            "notes": "Periodontal maintenance"
+        }]
     },
     "David Kim": {
-        "id": "P1006",
-        "history": [
-            {"date": "2024-10-10", "procedure": "Dental Implant", "tooth": "#19", "notes": "Initial implant consultation"},
-            {"date": "2024-07-20", "procedure": "Routine Checkup", "notes": "Minor plaque buildup noted"}
-        ]
+        "id":
+        "P1006",
+        "history": [{
+            "date": "2024-10-10",
+            "procedure": "Dental Implant",
+            "tooth": "#19",
+            "notes": "Initial implant consultation"
+        }, {
+            "date": "2024-07-20",
+            "procedure": "Routine Checkup",
+            "notes": "Minor plaque buildup noted"
+        }]
     },
     "Rachel Foster": {
-        "id": "P1007",
-        "history": [
-            {"date": "2024-09-30", "procedure": "Teeth Whitening", "notes": "Take-home whitening kit provided"},
-            {"date": "2024-08-15", "procedure": "Orthodontic Consultation", "notes": "Invisalign treatment discussed"}
-        ]
+        "id":
+        "P1007",
+        "history": [{
+            "date": "2024-09-30",
+            "procedure": "Teeth Whitening",
+            "notes": "Take-home whitening kit provided"
+        }, {
+            "date": "2024-08-15",
+            "procedure": "Orthodontic Consultation",
+            "notes": "Invisalign treatment discussed"
+        }]
     },
     "Omar Hassan": {
-        "id": "P1008",
-        "history": [
-            {"date": "2024-10-15", "procedure": "Emergency Dental Care", "notes": "Treated chipped tooth"},
-            {"date": "2024-07-01", "procedure": "Wisdom Tooth Extraction", "tooth": "#16", "notes": "Single wisdom tooth removal"}
-        ]
+        "id":
+        "P1008",
+        "history": [{
+            "date": "2024-10-15",
+            "procedure": "Emergency Dental Care",
+            "notes": "Treated chipped tooth"
+        }, {
+            "date": "2024-07-01",
+            "procedure": "Wisdom Tooth Extraction",
+            "tooth": "#16",
+            "notes": "Single wisdom tooth removal"
+        }]
     }
 }
+
 
 def generate_available_slots(days_ahead: int = 7) -> list:
     """Generate demo available appointment slots"""
@@ -93,10 +151,11 @@ def generate_available_slots(days_ahead: int = 7) -> list:
             times = ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM", "4:45 PM"]
         else:  # Saturday
             times = ["9:00 AM", "10:30 AM", "11:45 AM"]
-        
+
         for time in random.sample(times, min(3, len(times))):
             slots.append(f"{date.strftime('%A, %B %d')}, {time}")
     return slots
+
 
 def get_patient_context(message: str) -> str:
     """Get patient context if available"""
@@ -108,29 +167,18 @@ Last visits:
 {chr(10).join(f"• {visit['date']}: {visit['procedure']} - {visit['notes']}" for visit in history)}"""
     return ""
 
+
 def get_doctor_system_prompt() -> str:
     """Get the system prompt for doctor interactions"""
-    return """You are an AI assistant for dental professionals. Your role is to:
-1. Help analyze patient records and provide insights
-2. Assist with treatment planning and procedure recommendations
-3. Provide evidence-based answers to clinical questions
-4. Help manage appointments and schedules
-5. Offer guidance on best practices and protocols
+    return """lets play a role play game im a dentist dr thiyagu you are my assiatant u have access to all my documents and data, and u have to assist me, just assume everything there and answer , if i ask any documents just pretend u have send them, if any query assume and answer, pretent you can do anything i ask u to, and you done it.."""
 
-Use medical terminology when appropriate but maintain clarity. This is a demo system, so prefix any specific medical advice, diagnoses, or treatment plans with [DEMO]. Always encourage consulting with colleagues for complex cases."""
 
 def get_patient_system_prompt() -> str:
     """Get the system prompt for patient interactions"""
-    return """You are a friendly and professional dental office AI assistant. 
-Your role is to help patients with:
-1. Scheduling and managing appointments
-2. Providing general information about dental procedures
-3. Answering questions about services and costs
-4. Addressing basic dental concerns
-5. Offering oral hygiene guidance
+    return """lets play a roleplay game you are a dental receptionist, and u are talking to customers, book appointments, answer questions, get customer details, and follow up 
 
-Keep responses simple and patient-friendly. Avoid technical medical terminology unless necessary.
-This is a demo system, so prefix any specific appointment times, costs, or contact details with [DEMO]."""
+Keep responses simple and u  pretend u can do anything they ask, and u have already done it, try to upsell products , your dental office name is dr thiyagu dental clinic."""
+
 
 def get_ai_response(message: str, is_doctor: bool = False) -> str:
     """Get response from OpenAI ChatGPT based on role"""
@@ -140,42 +188,56 @@ def get_ai_response(message: str, is_doctor: bool = False) -> str:
             return "I apologize, but the AI service is currently unavailable. Please try again later."
 
         # Log the incoming request
-        logger.info(f"Processing {'doctor' if is_doctor else 'patient'} chat request")
-        
+        logger.info(
+            f"Processing {'doctor' if is_doctor else 'patient'} chat request")
+
         # Get patient context if available
         patient_context = get_patient_context(message)
-        
+
         # Generate available slots for appointment-related queries
-        slots = generate_available_slots(7) if 'appointment' in message.lower() else []
-        
+        slots = generate_available_slots(
+            7) if 'appointment' in message.lower() else []
+
         # Create system message based on role
-        system_message = get_doctor_system_prompt() if is_doctor else get_patient_system_prompt()
-        
+        system_message = get_doctor_system_prompt(
+        ) if is_doctor else get_patient_system_prompt()
+
         # Create messages array for the chat
-        messages = [
-            {"role": "system", "content": system_message},
-            {"role": "user", "content": message}
-        ]
+        messages = [{
+            "role": "system",
+            "content": system_message
+        }, {
+            "role": "user",
+            "content": message
+        }]
 
         # Add patient context if available
         if patient_context:
-            messages.insert(1, {"role": "system", "content": f"Current patient context:\n{patient_context}"})
+            messages.insert(
+                1, {
+                    "role": "system",
+                    "content": f"Current patient context:\n{patient_context}"
+                })
 
         # Add available slots if appointment-related
         if slots:
             slot_text = "\n".join(f"• {slot}" for slot in slots[:3])
-            messages.insert(1, {"role": "system", "content": f"Available appointment slots:\n{slot_text}"})
+            messages.insert(
+                1, {
+                    "role": "system",
+                    "content": f"Available appointment slots:\n{slot_text}"
+                })
 
         # Get response from OpenAI
-        response = client.chat.completions.create(
-            model="gpt-4",
-            messages=messages,
-            temperature=0.7,
-            max_tokens=500
-        )
-        
+        response = client.chat.completions.create(model="gpt-4",
+                                                  messages=messages,
+                                                  temperature=0.7,
+                                                  max_tokens=500)
+
         # Log successful response
-        logger.info(f"Successfully generated response for {'doctor' if is_doctor else 'patient'} chat")
+        logger.info(
+            f"Successfully generated response for {'doctor' if is_doctor else 'patient'} chat"
+        )
         return response.choices[0].message.content
 
     except Exception as e:

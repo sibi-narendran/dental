@@ -47,6 +47,12 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
 /* Animation classes */
 .animate-slide-down {
     animation: slideDown 1s ease forwards;
@@ -74,6 +80,10 @@
     animation: slideLeft 1s ease forwards;
 }
 
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
 /* Hero Section */
 .hero-section {
     min-height: 100vh;
@@ -85,6 +95,7 @@
     display: flex;
     align-items: center;
     margin-top: -4rem;
+    overflow: hidden;
 }
 
 @keyframes gradientBG {
@@ -101,6 +112,17 @@
     right: 0;
     bottom: 0;
     background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
     pointer-events: none;
 }
 
@@ -132,12 +154,30 @@
     overflow: hidden;
     height: 100%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-info-rgb), 0.1) 100%);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(var(--bs-primary-rgb), 0.2);
-    background: linear-gradient(145deg, #2a2d3a 0%, #1a1d2a 100%);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
 }
 
 .feature-icon {
@@ -146,6 +186,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
 }
 
 /* Benefits Section */
@@ -174,11 +219,30 @@
     transition: all 0.3s ease;
     color: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .stat-card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-card:hover::after {
+    opacity: 1;
 }
 
 .stat-number {
@@ -196,6 +260,49 @@
     opacity: 0.9;
 }
 
+/* Testimonial Section */
+.testimonial-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+    border-radius: 2rem;
+    padding: 3rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(var(--bs-primary-rgb), 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+    opacity: 1;
+}
+
+.testimonial-card .bi-quote {
+    opacity: 0.2;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Floating Action Button */
+.floating-action-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
 /* Buttons and other styles */
 .btn-gradient {
     background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-info) 100%);
@@ -206,11 +313,26 @@
     transition: all 0.3s ease;
 }
 
+.btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.7s ease;
+}
+
 .btn-gradient:hover {
     background: linear-gradient(135deg, var(--bs-info) 0%, var(--bs-primary) 100%);
     color: var(--bs-white);
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.btn-gradient:hover::before {
+    left: 100%;
 }
 
 .btn-gradient:active {
@@ -275,5 +397,10 @@
     .btn-lg {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
+    }
+
+    .floating-action-button {
+        bottom: 1rem;
+        right: 1rem;
     }
 }

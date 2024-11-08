@@ -1,4 +1,30 @@
-[Previous CSS content remains unchanged...]
+:root {
+    --bs-primary: #a5b7fd;
+    --bs-primary-rgb: 67, 97, 238;
+    --bs-secondary: #3F37C9;
+    --bs-info: #4CC9F0;
+    --bs-info-rgb: 76, 201, 240;
+    --bs-success: #00F5D4;
+    --bs-success-rgb: 0, 245, 212;
+    --bs-warning: #F72585;
+    --bs-warning-rgb: 247, 37, 133;
+}
+
+/* Animation keyframes */
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 /* Accordion Styles */
 .accordion-button:not(.collapsed) {
@@ -25,4 +51,164 @@
     background: rgba(var(--bs-primary-rgb), 0.1);
 }
 
-[Previous CSS content remains unchanged...]
+/* Button and hover effects */
+.btn-gradient {
+    background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-info) 100%);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, var(--bs-info) 0%, var(--bs-primary) 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--bs-primary-rgb), 0.4);
+}
+
+/* Floating Chat Button */
+.floating-chat-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-info) 100%);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-chat-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Overlay */
+.chat-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100vh;
+    background: var(--bs-dark);
+    transition: right 0.3s ease;
+    z-index: 1050;
+}
+
+.chat-overlay.active {
+    right: 0;
+}
+
+.chat-overlay-content {
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-overlay-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-overlay-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    max-width: 80%;
+}
+
+.message.user {
+    background: var(--bs-primary);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.message.ai {
+    background: var(--bs-dark);
+    color: var(--bs-light);
+    margin-right: auto;
+    border-bottom-left-radius: 0.25rem;
+}
+
+/* Table Styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table > :not(caption) > * > * {
+    padding: 1rem;
+}
+
+.table > tbody > tr:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+}
+
+.avatar-placeholder {
+    transition: transform 0.3s ease;
+}
+
+tr:hover .avatar-placeholder {
+    transform: scale(1.1);
+}
+
+/* Badge Styles */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.badge.bg-success {
+    background: linear-gradient(135deg, #00F5D4 0%, #00B4A2 100%) !important;
+}
+
+.badge.bg-warning {
+    background: linear-gradient(135deg, #F72585 0%, #B5179E 100%) !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+    .chat-overlay {
+        width: 100%;
+    }
+    
+    .message.user,
+    .message.ai {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .hover-lift:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}

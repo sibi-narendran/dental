@@ -3,109 +3,237 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<div class="hero-section text-center py-5">
+<!-- Header Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top bg-dark">
     <div class="container">
-        <h1 class="display-3 fw-bold animate-slide-down">AI-Powered Solutions for Dental Practices</h1>
-        <p class="lead fs-3 mb-4 text-secondary animate-fade-in">Transform Your Dental Practice with Our AI-Powered Agent</p>
-        <p class="fs-5 mb-5 text-secondary animate-fade-in-delayed">
-            Automate patient follow-ups, reduce missed appointments, increase sales, and provide seamless care with AI integration.
+        <a class="navbar-brand" href="/">
+            <i class="bi bi-heart-pulse-fill text-primary me-2"></i>
+            DentalAI CRM
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#demo">Demo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#success">Success Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq">FAQ</a>
+                </li>
+            </ul>
+            <a href="/doctor-portal" class="btn btn-primary rounded-pill px-4">Get a Free Demo</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-2 fw-bold mb-4 animate-slide-down">
+            Boost Your Dental Practice Revenue While You Sleep
+        </h1>
+        <p class="lead fs-3 mb-4 animate-fade-in">
+            Automate prescriptions, elevate patient care, and maximize profits – effortlessly.
         </p>
         <div class="d-flex justify-content-center gap-3 mb-5 animate-slide-up">
-            <a href="/doctor-portal" class="btn btn-primary btn-lg pulse-button">Try Demo</a>
-            <a href="http://maaya.ai" class="btn btn-outline-secondary btn-lg hover-lift">Contact Us</a>
+            <a href="#demo" class="btn btn-primary btn-lg rounded-pill pulse-button">
+                Unlock Your Potential
+            </a>
+            <a href="/doctor-portal" class="btn btn-outline-light btn-lg rounded-pill hover-lift">
+                See the Magic in Action
+            </a>
         </div>
     </div>
-</div>
-
-<!-- Benefits Section -->
-<div class="container py-5">
-    <h2 class="text-center mb-5 animate-slide-down">Why Choose Our Solution?</h2>
-    <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-            <div class="feature-card card h-100 animate-fade-in">
-                <div class="card-body text-center">
-                    <i class="bi bi-chat-dots-fill feature-icon mb-3"></i>
-                    <h5 class="card-title">Automated Communication</h5>
-                    <p class="card-text">Connect with patients via WhatsApp, email, and SMS to keep them informed and engaged.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-3">
-            <div class="feature-card card h-100 animate-fade-in" style="animation-delay: 0.2s">
-                <div class="card-body text-center">
-                    <i class="bi bi-calendar-check-fill feature-icon mb-3"></i>
-                    <h5 class="card-title">Appointment Management</h5>
-                    <p class="card-text">Minimize no-shows with proactive reminders and easy rescheduling.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-3">
-            <div class="feature-card card h-100 animate-fade-in" style="animation-delay: 0.4s">
-                <div class="card-body text-center">
-                    <i class="bi bi-person-hearts feature-icon mb-3"></i>
-                    <h5 class="card-title">Enhanced Patient Experience</h5>
-                    <p class="card-text">Provide answers to patient inquiries and streamline appointment bookings.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-3">
-            <div class="feature-card card h-100 animate-fade-in" style="animation-delay: 0.6s">
-                <div class="card-body text-center">
-                    <i class="bi bi-graph-up-arrow feature-icon mb-3"></i>
-                    <h5 class="card-title">Sales & Retention Boost</h5>
-                    <p class="card-text">Upsell treatments, re-engage patients, and offer seamless post-appointment care.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
 
 <!-- Features Section -->
-<div class="bg-dark py-5">
+<section id="features" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-5 animate-slide-down">Key Features</h2>
+        <h2 class="text-center mb-5">Features Spotlight</h2>
         <div class="row g-4">
-            <div class="col-md-6">
-                <div class="d-flex align-items-start animate-slide-right">
-                    <i class="bi bi-whatsapp text-success fs-2 me-3"></i>
-                    <div>
-                        <h5>Multi-Channel Integration</h5>
-                        <p>Seamless communication via WhatsApp, email, and SMS platforms.</p>
+            <!-- Feature 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card animate-fade-in">
+                    <div class="card-body">
+                        <i class="bi bi-file-medical-fill feature-icon mb-3"></i>
+                        <h3>Automated Prescriptions</h3>
+                        <p>Instantly generate prescriptions for doctor approval – no more wasted time, no more errors.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="d-flex align-items-start animate-slide-left">
-                    <i class="bi bi-robot text-primary fs-2 me-3"></i>
-                    <div>
-                        <h5>AI-Powered Responses</h5>
-                        <p>Intelligent automated responses to common patient inquiries.</p>
+            <!-- Feature 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="card-body">
+                        <i class="bi bi-robot feature-icon mb-3"></i>
+                        <h3>AI Analysis</h3>
+                        <p>Let our AI analyze patient documents & X-rays for actionable insights and diagnostic precision.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="d-flex align-items-start animate-slide-right">
-                    <i class="bi bi-calendar2-week text-info fs-2 me-3"></i>
-                    <div>
-                        <h5>Smart Scheduling</h5>
-                        <p>Advanced CRM with intelligent schedule management.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="d-flex align-items-start animate-slide-left">
-                    <i class="bi bi-bell text-warning fs-2 me-3"></i>
-                    <div>
-                        <h5>Automated Follow-ups</h5>
-                        <p>Personalized notifications and appointment reminders.</p>
+            <!-- Feature 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card animate-fade-in" style="animation-delay: 0.4s">
+                    <div class="card-body">
+                        <i class="bi bi-calendar-check-fill feature-icon mb-3"></i>
+                        <h3>Smart Scheduling</h3>
+                        <p>Never lose a patient to a missed appointment with automated WhatsApp reminders.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Success Stories -->
+<section id="success" class="bg-dark py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Transform Your Practice in Days, Not Months</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="testimonial-carousel">
+                    <div class="testimonial-item text-center">
+                        <p class="lead mb-4">"Since using this AI system, our revenues have surged by 40%, and our patient satisfaction scores are through the roof!"</p>
+                        <div class="testimonial-author">
+                            <h5>Dr. Alex Turner</h5>
+                            <p class="text-muted">SmileCare Dental</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Why Choose Us</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="bi bi-graph-up-arrow display-4 text-primary mb-3"></i>
+                    <h4>Make More, Work Less</h4>
+                    <p>AI handles routine tasks while you focus on patient care.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="bi bi-trophy display-4 text-primary mb-3"></i>
+                    <h4>Stand Out</h4>
+                    <p>Gain a competitive edge with AI-driven innovation.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="bi bi-heart-pulse display-4 text-primary mb-3"></i>
+                    <h4>Grow Your Profits</h4>
+                    <p>Every follow-up and upsell is done for you.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="bi bi-lightning-charge display-4 text-primary mb-3"></i>
+                    <h4>Fast Setup</h4>
+                    <p>Get started quickly and see immediate results.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demo Section -->
+<section id="demo" class="bg-dark py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="mb-4">See How Our AI Makes Every Second Count</h2>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check2-circle text-primary me-2"></i>
+                        Automate appointment management
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check2-circle text-primary me-2"></i>
+                        Generate prescriptions instantly
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check2-circle text-primary me-2"></i>
+                        Engage patients seamlessly
+                    </li>
+                </ul>
+                <a href="/doctor-portal" class="btn btn-primary btn-lg rounded-pill mt-3">
+                    Start Your Interactive Demo
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="demo-preview rounded shadow-lg p-4">
+                    <div class="demo-screen bg-dark p-4 rounded">
+                        <h5 class="text-center mb-4">Live Demo Preview</h5>
+                        <div class="chat-preview">
+                            <div class="message ai">How can I help you today?</div>
+                            <div class="message user">I'd like to schedule an appointment.</div>
+                            <div class="message ai">I'll help you find the perfect time slot...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                How quickly can I see results?
+                            </button>
+                        </h3>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Most practices see significant improvements within the first month, with automated appointment management and patient engagement showing immediate benefits.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Is patient data secure?
+                            </button>
+                        </h3>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, we implement industry-standard security measures and comply with all relevant healthcare data protection regulations to ensure your patient data remains secure.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-5 bg-dark">
+    <div class="container text-center">
+        <h2 class="mb-4">Transform Your Practice Today</h2>
+        <p class="lead mb-4">Join the dental practices already revolutionizing their patient care with AI</p>
+        <a href="/doctor-portal" class="btn btn-primary btn-lg rounded-pill">
+            Schedule Your Demo
+        </a>
+    </div>
+</section>
 {% endblock %}

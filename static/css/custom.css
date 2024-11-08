@@ -59,10 +59,13 @@
 
 /* Hero Section */
 .hero-section {
-    padding: 5rem 0;
-    background: linear-gradient(135deg, #1a1e3c 0%, #2d3a8c 50%, #3c1a5b 100%);
-    margin-top: -1.5rem;
+    min-height: 100vh;
+    padding: 8rem 0;
+    background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-info) 100%);
     position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: -4rem;
 }
 
 .hero-section::before {
@@ -81,13 +84,11 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     margin-bottom: 1.5rem;
     font-weight: 800;
-    letter-spacing: -0.5px;
 }
 
 .hero-section .lead {
     color: var(--bs-light);
     text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    font-weight: 500;
 }
 
 .hero-section .text-secondary {
@@ -97,9 +98,12 @@
 
 /* Feature Cards */
 .feature-card {
-    border: 1px solid var(--bs-border-color);
+    border: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: var(--bs-dark);
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 100%;
 }
 
 .feature-card:hover {
@@ -112,7 +116,7 @@
     color: var(--bs-primary);
 }
 
-/* Button animations */
+/* Existing button animations */
 .pulse-button {
     animation: pulse 2s infinite;
 }
@@ -145,6 +149,54 @@
 
 .btn-gradient:active {
     transform: translateY(-1px);
+}
+
+/* Testimonial Section */
+.testimonial-carousel {
+    padding: 2rem;
+    background: var(--bs-dark);
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Demo Section */
+.demo-preview {
+    background: var(--bs-dark);
+    border: 1px solid var(--bs-border-color);
+}
+
+.demo-screen {
+    border: 1px solid var(--bs-border-color);
+}
+
+.chat-preview {
+    min-height: 200px;
+}
+
+.chat-preview .message {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.chat-preview .message.ai {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    margin-right: 20%;
+    border-radius: 1rem 1rem 1rem 0;
+}
+
+.chat-preview .message.user {
+    background: var(--bs-secondary);
+    color: var(--bs-white);
+    margin-left: 20%;
+    border-radius: 1rem 1rem 0 1rem;
+    text-align: right;
 }
 
 /* Chat styles */
@@ -225,7 +277,16 @@
     flex-direction: column;
 }
 
-/* Table styles */
+/* Button styles */
+.btn {
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+}
+
+/* Existing table and avatar styles */
 .table {
     margin-bottom: 0;
 }
@@ -238,9 +299,38 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Badge styles */
 .badge {
     font-weight: 500;
+}
+
+/* Fixed navigation adjustments */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--bs-dark) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Accordion customization */
+.accordion-item {
+    background-color: var(--bs-dark);
+    border-color: var(--bs-border-color);
+}
+
+.accordion-button {
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+.accordion-button::after {
+    filter: invert(1);
 }
 
 /* Mobile responsiveness */
@@ -270,7 +360,8 @@
     }
     
     .hero-section {
-        padding: 3rem 0;
+        padding: 6rem 0;
+        min-height: auto;
     }
 
     .hero-section h1 {
@@ -279,6 +370,10 @@
     
     .feature-card {
         margin-bottom: 1rem;
+    }
+
+    .demo-preview {
+        margin-top: 2rem;
     }
 
     .table-responsive {

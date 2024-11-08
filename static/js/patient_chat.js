@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatMessages = document.getElementById('chat-messages');
     const chatForm = document.getElementById('chat-form');
     const messageInput = document.getElementById('message-input');
-    const templateButtons = document.querySelectorAll('.template-btn');
 
     // Initialize chat functionality if elements exist
     if (chatMessages && chatForm && messageInput) {
@@ -13,16 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
-
-        // Handle template button clicks
-        templateButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const message = button.dataset.message;
-                messageInput.value = message;
-                messageInput.focus();
-            });
-        });
 
         // Handle Enter key press
         messageInput.addEventListener('keydown', function(e) {

@@ -260,6 +260,8 @@
 
 /* Accordion Styles */
 .accordion-button {
+    text-align: left;
+    justify-content: flex-start;
     color: white;
     border: none;
 }

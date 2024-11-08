@@ -4,11 +4,13 @@
 
 {% block content %}
 <!-- Chat Interface at the top -->
-<div class="text-center mb-4">
+<div class="mb-4">
     <div class="command-sections mb-4">
-        <h2 class="h3 mb-4 text-center">
-            <i class="bi bi-robot text-primary me-2"></i>AI Assistant Commands
-        </h2>
+        <div class="d-flex align-items-center mb-4">
+            <h2 class="h3 mb-0">
+                <i class="bi bi-robot text-primary me-2"></i>AI Assistant Commands
+            </h2>
+        </div>
         
         <!-- Patient Management Section -->
         <div class="accordion mb-3">
@@ -195,7 +197,7 @@
         </div>
     </div>
 
-    <!-- Chat Button -->
+    <!-- Chat Button in separate container -->
     <div class="text-center mb-4">
         <button class="btn btn-lg shadow-lg rounded-pill px-5 py-3 btn-gradient hover-lift" id="chatButton">
             <i class="bi bi-robot me-2"></i> Ask AI Assistant
@@ -203,7 +205,7 @@
     </div>
 </div>
 
-<!-- Appointments Table - Extracted to separate include -->
+<!-- Appointments Table -->
 {% include 'includes/_appointments_table.html' %}
 
 <!-- Chat Overlay -->

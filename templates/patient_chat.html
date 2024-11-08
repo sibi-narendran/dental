@@ -10,6 +10,64 @@
                 <h2 class="mb-0">Patient Assistant</h2>
             </div>
             <div class="card-body">
+                <!-- Message Templates Accordion -->
+                <div class="accordion mb-3" id="messageTemplates">
+                    <!-- Appointment Related -->
+                    <div class="accordion-item bg-dark border-0">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-gradient" data-bs-toggle="collapse" data-bs-target="#appointmentTemplates">
+                                <i class="bi bi-calendar-check text-info me-2"></i>Appointment Related
+                            </button>
+                        </h3>
+                        <div id="appointmentTemplates" class="accordion-collapse collapse" data-bs-parent="#messageTemplates">
+                            <div class="accordion-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="I'd like to schedule an appointment">Schedule New Appointment</button>
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="Can I reschedule my appointment?">Reschedule Appointment</button>
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="What are your available time slots?">Check Available Times</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment Information -->
+                    <div class="accordion-item bg-dark border-0">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-gradient" data-bs-toggle="collapse" data-bs-target="#treatmentTemplates">
+                                <i class="bi bi-clipboard2-pulse text-warning me-2"></i>Treatment Information
+                            </button>
+                        </h3>
+                        <div id="treatmentTemplates" class="accordion-collapse collapse" data-bs-parent="#messageTemplates">
+                            <div class="accordion-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="What should I expect during a root canal procedure?">Root Canal Information</button>
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="Can you tell me about teeth whitening options?">Teeth Whitening Options</button>
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="What are the payment options available?">Payment Options</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Post-Treatment Care -->
+                    <div class="accordion-item bg-dark border-0">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-gradient" data-bs-toggle="collapse" data-bs-target="#careTemplates">
+                                <i class="bi bi-heart-pulse text-success me-2"></i>Post-Treatment Care
+                            </button>
+                        </h3>
+                        <div id="careTemplates" class="accordion-collapse collapse" data-bs-parent="#messageTemplates">
+                            <div class="accordion-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="What should I do after my dental cleaning?">After Cleaning Care</button>
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="How should I care for my teeth after whitening?">After Whitening Care</button>
+                                    <button class="btn btn-outline-light text-start template-btn" data-message="When can I eat after my procedure?">Post-Procedure Diet</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
                 <div id="chat-messages" class="mb-3" style="height: 400px; overflow-y: auto;">
                     <div class="message system">
                         Hello! I'm your dental assistant. I can help you with:
@@ -19,12 +77,16 @@
                         How can I assist you today?
                     </div>
                 </div>
+                
+                <!-- Chat Input -->
                 <form id="chat-form">
                     <div class="input-group">
                         <input type="text" id="message-input" class="form-control" 
-                            placeholder="Ask about appointments, procedures, or dental care..."
+                            placeholder="Type your message or select a template above..."
                             autocomplete="off">
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-send-fill"></i>
+                        </button>
                     </div>
                 </form>
             </div>

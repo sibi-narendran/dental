@@ -8,6 +8,10 @@ import storage
 def home():
     return render_template('home.html')
 
+@app.route('/portal-selection')
+def portal_selection():
+    return render_template('portal_selection.html')
+
 @app.route('/doctor-portal')
 def doctor_portal():
     appointments = storage.get_all_appointments()

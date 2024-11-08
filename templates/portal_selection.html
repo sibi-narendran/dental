@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Select Portal{% endblock %}
+
+{% block content %}
+<div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="row w-100 justify-content-center">
+        <div class="col-md-8 text-center mb-5">
+            <h1 class="display-4 mb-4">Welcome to DentalAI CRM</h1>
+            <p class="lead text-muted mb-5">Choose your portal to continue</p>
+        </div>
+        <div class="col-md-10">
+            <div class="row g-4 justify-content-center">
+                <!-- Doctor Portal Card -->
+                <div class="col-md-6">
+                    <div class="feature-card h-100 p-4 text-center">
+                        <i class="bi bi-person-workspace display-1 feature-icon mb-4"></i>
+                        <h3 class="h4 mb-3">Doctor Portal</h3>
+                        <p class="text-muted mb-4">Access your appointments, chat with AI assistant, and manage patient records</p>
+                        <a href="/doctor-portal" class="btn btn-gradient btn-lg rounded-pill w-100">
+                            <i class="bi bi-door-open-fill me-2"></i>Enter Doctor Portal
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Patient Portal Card -->
+                <div class="col-md-6">
+                    <div class="feature-card h-100 p-4 text-center">
+                        <i class="bi bi-people-fill display-1 feature-icon mb-4"></i>
+                        <h3 class="h4 mb-3">Patient Portal</h3>
+                        <p class="text-muted mb-4">Book appointments, chat with our AI assistant, and access dental care information</p>
+                        <a href="/patient-chat" class="btn btn-gradient btn-lg rounded-pill w-100">
+                            <i class="bi bi-door-open-fill me-2"></i>Enter Patient Portal
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="/" class="btn btn-outline-light rounded-pill px-4">
+                    <i class="bi bi-house-fill me-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -5,76 +5,102 @@
 {% block content %}
 <!-- Chat Interface at the top -->
 <div class="text-center mb-4">
-    <div class="chat-info mb-4">
-        <h2 class="h3 mb-3">
-            <i class="bi bi-robot text-primary me-2"></i>Common AI Assistant Commands
+    <div class="command-sections mb-4">
+        <h2 class="h3 mb-4 text-center">
+            <i class="bi bi-robot text-primary me-2"></i>AI Assistant Commands
         </h2>
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="card bg-gradient border-0 shadow-lg">
-                    <div class="card-body py-4">
-                        <div class="row g-4">
-                            <!-- Patient Management -->
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-start">
-                                    <i class="bi bi-person-lines-fill text-info display-6 me-3"></i>
-                                    <div class="text-start">
-                                        <h6 class="mb-2">Patient Management</h6>
-                                        <small class="text-muted d-block">• "Show me patient's history"</small>
-                                        <small class="text-muted d-block">• "Generate a prescription"</small>
-                                        <small class="text-muted d-block">• "Analyze x-ray reports"</small>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Appointments -->
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-start">
-                                    <i class="bi bi-calendar2-check text-success display-6 me-3"></i>
-                                    <div class="text-start">
-                                        <h6 class="mb-2">Appointments</h6>
-                                        <small class="text-muted d-block">• "Show today's appointments"</small>
-                                        <small class="text-muted d-block">• "Reschedule appointments"</small>
-                                        <small class="text-muted d-block">• "Check availability"</small>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Follow-ups -->
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-start">
-                                    <i class="bi bi-chat-dots-fill text-warning display-6 me-3"></i>
-                                    <div class="text-start">
-                                        <h6 class="mb-2">Follow-ups</h6>
-                                        <small class="text-muted d-block">• "Send treatment reminders"</small>
-                                        <small class="text-muted d-block">• "Post-treatment messages"</small>
-                                        <small class="text-muted d-block">• "Schedule follow-up visits"</small>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Analysis -->
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-start">
-                                    <i class="bi bi-graph-up text-danger display-6 me-3"></i>
-                                    <div class="text-start">
-                                        <h6 class="mb-2">Analysis & Reports</h6>
-                                        <small class="text-muted d-block">• "Monthly appointment summary"</small>
-                                        <small class="text-muted d-block">• "Treatment popularity stats"</small>
-                                        <small class="text-muted d-block">• "Patient feedback analysis"</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        
+        <!-- Patient Management Section -->
+        <div class="accordion mb-3">
+            <div class="accordion-item bg-dark border-0">
+                <h3 class="accordion-header">
+                    <button class="accordion-button bg-gradient collapsed" data-bs-toggle="collapse" data-bs-target="#patientCommands">
+                        <i class="bi bi-person-lines-fill text-info me-2"></i>
+                        Patient Management
+                    </button>
+                </h3>
+                <div id="patientCommands" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Show me patient's history"</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Generate a prescription"</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Analyze x-ray reports"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointments Section -->
+        <div class="accordion mb-3">
+            <div class="accordion-item bg-dark border-0">
+                <h3 class="accordion-header">
+                    <button class="accordion-button bg-gradient collapsed" data-bs-toggle="collapse" data-bs-target="#appointmentCommands">
+                        <i class="bi bi-calendar2-check text-success me-2"></i>
+                        Appointments
+                    </button>
+                </h3>
+                <div id="appointmentCommands" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Show today's appointments"</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Reschedule appointments"</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Check availability"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Follow-ups Section -->
+        <div class="accordion mb-3">
+            <div class="accordion-item bg-dark border-0">
+                <h3 class="accordion-header">
+                    <button class="accordion-button bg-gradient collapsed" data-bs-toggle="collapse" data-bs-target="#followupCommands">
+                        <i class="bi bi-chat-dots-fill text-warning me-2"></i>
+                        Follow-ups
+                    </button>
+                </h3>
+                <div id="followupCommands" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Send treatment reminders"</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Post-treatment messages"</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Schedule follow-up visits"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analysis Section -->
+        <div class="accordion mb-3">
+            <div class="accordion-item bg-dark border-0">
+                <h3 class="accordion-header">
+                    <button class="accordion-button bg-gradient collapsed" data-bs-toggle="collapse" data-bs-target="#analysisCommands">
+                        <i class="bi bi-graph-up text-danger me-2"></i>
+                        Analysis & Reports
+                    </button>
+                </h3>
+                <div id="analysisCommands" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Monthly appointment summary"</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Treatment popularity stats"</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short me-2"></i>"Patient feedback analysis"</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Chat Button -->
-    <button class="btn btn-lg shadow-lg rounded-pill px-5 py-3 btn-gradient hover-lift" id="chatButton">
-        <i class="bi bi-robot me-2"></i> Ask AI Assistant
-    </button>
+    <div class="text-center mb-4">
+        <button class="btn btn-lg shadow-lg rounded-pill px-5 py-3 btn-gradient hover-lift" id="chatButton">
+            <i class="bi bi-robot me-2"></i> Ask AI Assistant
+        </button>
+    </div>
 </div>
 
 <div class="row">

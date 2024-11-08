@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </span>
             `;
             parentTd.innerHTML = `
-                <button class="btn btn-outline-success btn-sm rounded-pill px-4" disabled>
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3" disabled>
                     <i class="bi bi-check2-all me-1"></i> Approved
                 </button>
             `;

@@ -5,13 +5,14 @@ from datetime import datetime, timedelta
 import random
 import logging
 
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize OpenAI client with error handling
 try:
-    api_key = os.environ.get('OPENAI_API_KEY')
+    api_key ='sk-MQihhFVbdBlrSr_C6DU-gxDBOPnuGrluTak2uxQvzxT3BlbkFJ68yZMeO52p90MuBq39o-xMQ2lU-pinx17FnkWFvFUA' 
     if not api_key:
         raise ValueError("OpenAI API key is not set in environment variables")
 

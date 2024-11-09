@@ -1,13 +1,14 @@
 :root {
-    --bs-primary: #a5b7fd;
+    --bs-primary: #2b54e7;
     --bs-primary-rgb: 67, 97, 238;
     --bs-secondary: #3F37C9;
-    --bs-info: #4CC9F0;
+    --bs-info: #a8b0f8;
     --bs-info-rgb: 76, 201, 240;
     --bs-success: #00F5D4;
     --bs-success-rgb: 0, 245, 212;
     --bs-warning: #F72585;
     --bs-warning-rgb: 247, 37, 133;
+    --bs-warning: #F72585;
 }
 
 /* Animation keyframes */
